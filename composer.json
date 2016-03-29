@@ -1,5 +1,5 @@
 {
-  "name": "BenasPaulikas/yii2-forum",
+  "name": "benaspaulikas/yii2-forum",
   "description": "Forum module for Yii2",
   "type": "yii2-extension",
   "authors": [
@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "BenasPaulikas\\forum\\": ""
+      "benaspaulikas\\forum\\": ""
     }
   }
 }
