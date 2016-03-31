@@ -26,7 +26,7 @@ echo GridView::widget([
     'beforeHeader' => [
         [
             'columns' => [
-                ['content' => $model->title, 'options' => ['colspan' => 5, 'class' => 'text-center warning']],
+                ['content' => $model->title . ($model->description ? Html::tag('p', $model->description, ['class' => 'forum-description']) : null), 'options' => ['colspan' => 5, 'class' => 'text-center warning']],
             ],
         ]
     ],
