@@ -21,6 +21,10 @@ class DefaultController extends Controller
             ->where(['parent_id' => 0])
             ->all();
 
+        if (count($categories) == 1) {
+            return $this->redirect(['/forum/category', 'id' => $categories[0]->id]);
+        }
+
         return $this->render('index', [
             'categories' => $categories
         ]);

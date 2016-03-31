@@ -20,15 +20,18 @@ class CategoryController extends Controller
     public function actionIndex($id)
     {
         /* @var $model Category */
-        $model = Category::find()->where(['id' => $id])->andWhere(['>', 'parent_id', 0])->one();
+        $model = Category::find()->where(['id' => $id])->one();
+        //@TODO ->andWhere(['>', 'parent_id', 0]) this is required if we have childs
 
         if (!$model) {
             throw new NotFoundHttpException('Category not found');
         }
 
         $query = Post::find()
-            ->where(['category_id' => $model->id, 'parent_id' => 0])
-            ->orWhere(['category_id' => $model->parent->id]);
+            ->where(['category_id' => $model->id, 'parent_id' => 0]);
+
+        if ($model->parent)
+            $query->orWhere(['category_id' => $model->parent->id]);
 
         return $this->render('index', [
             'model' => $model,

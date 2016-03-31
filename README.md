@@ -1,4 +1,6 @@
 # yii2-forum
+@TODO:
+*Admin interface*
 This is a simple Yii2 forum module. Logged in users can create posts and comment in forum categories.
 
 If you have questions drop me a message at benas@paulikas.eu or skype: benas.paulikas
