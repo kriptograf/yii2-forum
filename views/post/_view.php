@@ -9,14 +9,11 @@
 use yii\helpers\Html;
 
 /* @var $model benaspaulikas\forum\models\Post */
-
 ?>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">
-            <i class="fa fa-user"></i>
-            <?= Yii::$app->user->can('admin') || Yii::$app->user->can('manager') ? Html::a($model->user->name, ['/user/view', 'id' => $model->user->id]) : $model->user->name ?>
-            - <?= $model->date ?>
+            <?= $model->date ?>
             (<?= Yii::$app->formatter->asRelativeTime(strtotime($model->date)) ?>)
 			<span class="pull-right">
 			<?php
@@ -28,6 +25,20 @@ use yii\helpers\Html;
         </h3>
     </div>
     <div class="panel-body">
-        <?= $model->safeContent ?>
+        <div class="row">
+            <div class="col-md-2">
+                <?= Html::tag('p', $model->user->name, [
+                    'style' => 'overflow:hidden'
+                ]) ?>
+                <?php if (Yii::$app->modules['forum']->avatar): ?>
+                    <?= call_user_func(Yii::$app->modules['forum']->avatar, $model) ?>
+                <?php endif ?>
+
+            </div>
+            <div class="col-md-10">
+                <?= $model->safeContent ?>
+            </div>
+        </div>
+
     </div>
 </div>

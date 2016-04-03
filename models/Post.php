@@ -23,6 +23,7 @@ use yii\db\ActiveRecord;
  * @property string $date
  * @proprety string $views
  * @property string $subject
+ * @property string $safeContent
  */
 class Post extends ActiveRecord
 {

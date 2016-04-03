@@ -14,6 +14,11 @@ class Module extends BaseModule
 {
     public $modelMap;
 
+    /**
+     * Callback for rendering user avatar.
+     */
+    public $avatar;
+
     public function init()
     {
         parent::init();
