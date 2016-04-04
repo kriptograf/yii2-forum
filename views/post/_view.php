@@ -30,8 +30,8 @@ use yii\helpers\Html;
                 <?= Html::tag('p', $model->user->name, [
                     'style' => 'overflow:hidden'
                 ]) ?>
-                <?php if (Yii::$app->modules['forum']->avatar): ?>
-                    <?= call_user_func(Yii::$app->modules['forum']->avatar, $model) ?>
+                <?php if (Yii::$app->modules['forum']->userInfo): ?>
+                    <?= call_user_func(Yii::$app->modules['forum']->userInfo, $model) ?>
                 <?php endif ?>
 
             </div>

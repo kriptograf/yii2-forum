@@ -15,9 +15,9 @@ class Module extends BaseModule
     public $modelMap;
 
     /**
-     * Callback for rendering user avatar.
+     * @var Callback for rendering user information
      */
-    public $avatar;
+    public $userInfo;
 
     public function init()
     {
