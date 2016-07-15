@@ -27,7 +27,7 @@ use yii\helpers\Html;
     <div class="panel-body">
         <div class="row">
             <div class="col-md-2">
-                <?= Html::tag('p', $model->user->name, [
+                <?= Html::tag('p', $model->user->username, [
                     'style' => 'overflow:hidden'
                 ]) ?>
                 <?php if (Yii::$app->modules['forum']->userInfo): ?>
